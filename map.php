@@ -80,28 +80,28 @@ class Map extends MY_Controller {
 
         $fields = array(
             'id' => array(
-                         'type' => 'INT',
-                         'constraint' => 11,
-                         'auto_increment' => TRUE,
-                     ),
+                'type' => 'INT',
+                'constraint' => 11,
+                'auto_increment' => TRUE
+            ),
             'city' => array(
-                         'type' => 'VARCHAR',
-                         'constraint' => 250,
-                     ),
-			'lat' => array(
-                         'type' => 'DOUBLE ',
-                     ),
-			'lng' => array(
-                         'type' => 'DOUBLE ',
-                     ),
-			'zoom' => array(
-                         'type' => 'TINYINT',
-                     ),
-			'created' => array(
-                         'type' => 'INT',
-                         'constraint' => 11,
-                     ),
-                 );
+                'type' => 'VARCHAR',
+                'constraint' => 250
+            ),
+            'lat' => array(
+                'type' => 'DOUBLE '
+            ),
+            'lng' => array(
+                'type' => 'DOUBLE '
+            ),
+            'zoom' => array(
+                'type' => 'TINYINT'
+            ),
+            'created' => array(
+                'type' => 'INT',
+                'constraint' => 11
+            ),
+        );
         
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->add_field($fields);
@@ -109,23 +109,32 @@ class Map extends MY_Controller {
 		
 		$fields = array(
             'id' => array(
-                         'type' => 'INT',
-                         'constraint' => 11,
-                         'auto_increment' => TRUE,
-                     ),
-			'city_id' => array(
-                         'type' => 'INT',
-                         'constraint' => 11,
-                     ),
+                'type' => 'INT',
+                'constraint' => 11,
+                'auto_increment' => TRUE
+            ),
+            'city_id' => array(
+                'type' => 'INT',
+                'constraint' => 11
+            ),
             'street' => array(
-                         'type' => 'VARCHAR',
-                         'constraint' => 250,
-                     ),
-			'created' => array(
-                         'type' => 'INT',
-                         'constraint' => 11,
-                     ),
-                 );
+                'type' => 'VARCHAR',
+                'constraint' => 250
+            ),
+            'lat' => array(
+                'type' => 'DOUBLE '
+            ),
+            'lng' => array(
+                'type' => 'DOUBLE '
+            ),
+            'zoom' => array(
+                'type' => 'TINYINT'
+            ),
+            'created' => array(
+                'type' => 'INT',
+                'constraint' => 11
+            ),
+        );
         
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->add_field($fields);
