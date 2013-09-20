@@ -130,6 +130,9 @@ class Map extends MY_Controller {
             'zoom' => array(
                 'type' => 'TINYINT'
             ),
+            'elements' => array(
+                'type' => 'TEXT'
+            ),
             'created' => array(
                 'type' => 'INT',
                 'constraint' => 11
