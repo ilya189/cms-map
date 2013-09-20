@@ -35,19 +35,19 @@
 												<input type="hidden" name="city_id" id="city_id" value="{$city.id}" />
                                             </div>
                                         </div>
-										<div class="control-group">
+					<div class="control-group">
                                             <label class="control-label" for="street_lat">Широта(lat):</label>
                                             <div class="controls">
                                                 <input type="text" class="textbox" name="street_lat" id="street_lat" value="{$city.lat}" required />
                                             </div>
                                         </div>
-										<div class="control-group">
+					<div class="control-group">
                                             <label class="control-label" for="street_lng">Долгота(lng):</label>
                                             <div class="controls">
                                                 <input type="text" class="textbox" name="street_lng" id="street_lng" value="{$city.lng}" required />
                                             </div>
                                         </div>
-										<div class="control-group">
+					<div class="control-group">
                                             <label class="control-label" for="street_zoom">Зум(zoom):</label>
                                             <div class="controls">
                                                 <input type="text" class="textbox" name="street_zoom" id="street_zoom" value="{$city.zoom}" required />

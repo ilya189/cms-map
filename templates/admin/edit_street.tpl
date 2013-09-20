@@ -4,7 +4,7 @@
         <div class="frame_title clearfix">
             <div class="pull-left">
                 <span class="help-inline"></span>
-                <span class="title">Редактировать улицу</span>
+                <span class="title">Редактировать улицу - {$street}</span>
             </div>
             <div class="pull-right">
                 <div class="d-i_b">
@@ -38,30 +38,36 @@
                                                     <input type="text" name="street_name" value="{$street}" />
                                                 </div>
                                             </div>
-											<div class="control-group">
-												<label class="control-label" for="street_lat">Широта(lat):</label>
-												<div class="controls">
-													<input type="text" class="textbox" name="street_lat" id="street_lat" value="{$lat}" required />
-												</div>
-											</div>
-											<div class="control-group">
-												<label class="control-label" for="street_lng">Долгота(lng):</label>
-												<div class="controls">
-													<input type="text" class="textbox" name="street_lng" id="street_lng" value="{$lng}" required />
-												</div>
-											</div>
-											<div class="control-group">
-												<label class="control-label" for="street_zoom">Зум(zoom):</label>
-												<div class="controls">
-													<input type="text" class="textbox" name="street_zoom" id="street_zoom" value="{$zoom}" required />
-												</div>
-											</div>
-											<div class="control-group">
-												<label class="control-label" for="street_line">Координаты:</label>
-												<div class="controls">
-													<input type="text" class="textbox" name="street_line" id="street_line" value="{$line}" required />
-												</div>
-											</div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="street_lat">Широта(lat):</label>
+                                                <div class="controls">
+                                                    <input type="text" class="textbox" name="street_lat" id="draw-lat" value="{$lat}" required />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="street_lng">Долгота(lng):</label>
+                                                <div class="controls">
+                                                    <input type="text" class="textbox" name="street_lng" id="draw-lng" value="{$lng}" required />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="street_zoom">Зум(zoom):</label>
+                                                <div class="controls">
+                                                    <input type="text" class="textbox" name="street_zoom" id="draw-zoom" value="{$zoom}" required />
+                                                </div>
+                                            </div>
+                                            <div id="draw-elements">
+                                                {foreach $elements as $key => $element}
+                                                    {foreach $element as $position}
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="{$key}">{$key}:</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="textbox {$key}" name="{$key}[]" value='{$position}' required />
+                                                            </div>
+                                                        </div>
+                                                    {/foreach}
+                                                {/foreach}
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
@@ -69,13 +75,12 @@
                         </tbody>
                     </table>
                 </div>
-			</div>
-			{form_csrf()}
+            </div>
+            {form_csrf()}
         </form>
-		<input type="hidden" id="poliline" value="1" />
-		<button id="map-bd" style="display:none;" onClick="loadmap.getdata('street')" class="btn btn-small btn-primary">Загрузить данные</button>
-		<button id="map-bi" onClick="loadmap.initialize('street')" class="btn btn-small btn-primary">Загрузить карту</button>
-		<br /><br />
-		<div id="map"></div>
-	</section>
+        <button id="map-bd" style="display:none;" onClick="loadmap.getdata('street');" class="btn btn-small btn-primary">Загрузить данные</button>
+        <button id="map-bi" onClick="loadmap.initialize('street');" class="btn btn-small btn-primary">Загрузить карту</button>
+        <br /><br />
+        <div id="map"></div>
+    </section>
 </div>
